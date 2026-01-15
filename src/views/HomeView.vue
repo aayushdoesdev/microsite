@@ -11,12 +11,12 @@ import ContactSection from "@/sections/HomeSections/ContactSection.vue";
 
 <template>
   <section class="">
-    <HeroSection />
-    <AmenitySection/>
-    <HighlightSection/>
-    <FloorPlanSection/>
-    <MasterLayoutSection/>
-    <LocationSection/>
+    <HeroSection id=""/>
+    <AmenitySection id="amenities"/>
+    <HighlightSection id="highlights"/>
+    <FloorPlanSection id="floor"/>
+    <MasterLayoutSection id="master"/>
+    <LocationSection id="location"/>
     <EmiSection/>
     <ContactSection/>
   </section>

@@ -41,7 +41,7 @@ onMounted(async () => {
   <section class="max-w-7xl mx-auto px-4 py-10 2xl:px-0 font-poppins">
     <div class="">
       <h1 class="font-medium text-[30px]">{{ specificProjectData?.projectName }}</h1>
-      <div class="flex items-center gap-2 nrml-text">
+      <div class="flex flex-col items-start md:flex-row md:items-center gap-2 nrml-text">
         <p>{{ specificProjectData?.venue }}</p>
         •
         <p>Price starting @ Rs. {{ specificProjectData?.minPrice }} Onwards*</p>

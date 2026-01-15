@@ -5,6 +5,10 @@
 @tailwind utilities;
 
 
+html{
+    scroll-behavior: smooth;
+}
+
 .title-text{
     @apply font-poppins font-medium text-[30px]
 }

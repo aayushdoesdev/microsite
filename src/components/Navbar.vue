@@ -6,6 +6,18 @@ const isSidebarOpen = ref(false);
 const closeSidebar = () => {
   isSidebarOpen.value = false;
 };
+
+const scrollToSection = (id) => {
+  closeSidebar();
+
+  // wait for sidebar close animation
+  setTimeout(() => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  }, 300);
+};
 </script>
 
 <template>
@@ -19,12 +31,12 @@ const closeSidebar = () => {
       </div>
 
       <div class="hidden xl:flex items-center gap-6">
-        <p>About</p>
-        <p>Amenities</p>
-        <p>Project Highlights</p>
-        <p>Typical Floor Plan</p>
-        <p>Master Layout</p>
-        <p>Location</p>
+        <a href="#">About</a>
+        <a href="#amenities">Amenities</a>
+        <a href="#highlights">Project Highlights</a>
+        <a href="#floor">Typical Floor Plan</a>
+        <a href="#master">Master Layout</a>
+        <a href="#location">Location</a>
       </div>
 
       <div class="flex items-center gap-3">
@@ -63,12 +75,27 @@ const closeSidebar = () => {
 
       <!-- Links -->
       <nav class="flex flex-col gap-4 text-sm">
-        <p @click="closeSidebar" class="cursor-pointer">About</p>
-        <p @click="closeSidebar" class="cursor-pointer">Amenities</p>
-        <p @click="closeSidebar" class="cursor-pointer">Project Highlights</p>
-        <p @click="closeSidebar" class="cursor-pointer">Typical Floor Plan</p>
-        <p @click="closeSidebar" class="cursor-pointer">Master Layout</p>
-        <p @click="closeSidebar" class="cursor-pointer">Location</p>
+        <a href="#" @click.prevent="scrollToSection('about')">About</a>
+
+        <a href="#amenities" @click.prevent="scrollToSection('amenities')">
+          Amenities
+        </a>
+
+        <a href="#highlights" @click.prevent="scrollToSection('highlights')">
+          Project Highlights
+        </a>
+
+        <a href="#floor" @click.prevent="scrollToSection('floor')">
+          Typical Floor Plan
+        </a>
+
+        <a href="#master" @click.prevent="scrollToSection('master')">
+          Master Layout
+        </a>
+
+        <a href="#location" @click.prevent="scrollToSection('location')">
+          Location
+        </a>
       </nav>
     </div>
   </aside>
